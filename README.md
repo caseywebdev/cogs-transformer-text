@@ -1,8 +1,8 @@
-# cogs-transformer-example
+# cogs-transformer-text
 
-An example transformer for [Cogs].
+A text transformer for [Cogs].
 
-[![Build Status]](http://travis-ci.org/caseywebdev/cogs-transformer-example)
+[![Build Status]](http://travis-ci.org/caseywebdev/cogs-transformer-text)
 
 [Cogs]: https://github.com/caseywebdev/cogs
-[Build Status]: https://secure.travis-ci.org/caseywebdev/cogs-transformer-example.png
+[Build Status]: https://secure.travis-ci.org/caseywebdev/cogs-transformer-text.png
