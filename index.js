@@ -1,12 +1,14 @@
-var _ = require('underscore');
-var babel = require('cogs-transformer-babel');
+const _ = require('underscore');
 
-var DEFAULTS = {
-  modules: 'umd'
+const DEFAULTS = {
+  before: 'export default ',
+  after: ';\n'
 };
 
-module.exports = function (file, options, cb) {
-  var source = 'export default ' + JSON.stringify(file.buffer.toString());
-  options = _.extend({}, DEFAULTS, options);
-  babel(_.extend({}, file, {buffer: new Buffer(source)}), options, cb);
+module.exports = (file, options, cb) => {
+  try {
+    options = _.extend({}, DEFAULTS, options);
+    const source = JSON.stringify(file.buffer.toString());
+    cb(null, {buffer: new Buffer(options.before + source + options.after)});
+  } catch (er) { cb(er); }
 };

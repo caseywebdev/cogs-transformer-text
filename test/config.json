@@ -1,9 +1,1 @@
-{
-  "in": {
-    "txt": {
-      "transformers": {
-        "name": "."
-      }
-    }
-  }
-}
+{"pipe": [{"name": ".", "only": "**/*.txt"}]}
