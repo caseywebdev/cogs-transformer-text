@@ -1,1 +1,1 @@
-{"pipe": [{"name": ".", "only": "**/*.txt"}]}
+{"transformers": [{"name": ".", "only": "**/*.txt"}]}

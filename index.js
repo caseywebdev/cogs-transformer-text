@@ -5,10 +5,8 @@ const DEFAULTS = {
   after: ';\n'
 };
 
-module.exports = (file, options, cb) => {
-  try {
-    options = _.extend({}, DEFAULTS, options);
-    const source = JSON.stringify(file.buffer.toString());
-    cb(null, {buffer: new Buffer(options.before + source + options.after)});
-  } catch (er) { cb(er); }
+module.exports = ({file: {buffer}, options}) => {
+  const {before, after} = _.extend({}, DEFAULTS, options);
+  const source = JSON.stringify(buffer.toString());
+  return {buffer: new Buffer(before + source + after)};
 };
